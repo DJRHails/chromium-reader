@@ -17,7 +17,7 @@ from chromium_reader.leveldb import RawLevelDb, Record
 from chromium_reader.localstorage import LocalStorageReader, LocalStorageRecord
 from chromium_reader.sessionstorage import SessionStorageReader, SessionStorageRecord
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "IndexedDbReader",

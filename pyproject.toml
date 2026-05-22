@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chromium-reader"
-version = "0.1.0"
+version = "0.1.1"
 description = "Pure-Python reader for Chromium/Chrome on-disk storage formats (LevelDB, localStorage, SessionStorage, IndexedDB, V8 values)."
 readme = "README.md"
 license = { text = "MIT" }
