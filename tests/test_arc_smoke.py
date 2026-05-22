@@ -24,9 +24,7 @@ pytestmark = pytest.mark.requires_browser
 def _profile_leveldbs() -> list[Path]:
     candidates = [ARC_BASE / "Default", *sorted(ARC_BASE.glob("Profile *"))]
     return [
-        ldb
-        for profile in candidates
-        if (ldb := profile / "Local Storage" / "leveldb").is_dir()
+        ldb for profile in candidates if (ldb := profile / "Local Storage" / "leveldb").is_dir()
     ]
 
 
