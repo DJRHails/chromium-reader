@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chromium-reader"
+version = "0.1.0"
+description = "Pure-Python reader for Chromium/Chrome on-disk storage formats (LevelDB, localStorage, SessionStorage, IndexedDB, V8 values)."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Daniel Hails", email = "chromium-reader@hails.info" },
+]
+keywords = ["chromium", "chrome", "leveldb", "localstorage", "indexeddb", "forensics", "browser"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Recovery Tools",
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/DJRHails/chromium-reader"
+Issues = "https://github.com/DJRHails/chromium-reader/issues"
+Source = "https://github.com/DJRHails/chromium-reader"
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.3.3",
+    "ruff==0.7.4",
+    "ty==0.0.1a4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+chromium_reader = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [".data", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "requires_browser: marks tests that need an actual browser profile (deselect with '-m \"not requires_browser\"')",
+]
